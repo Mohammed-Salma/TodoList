@@ -1,24 +1,44 @@
-import IconButton from '@mui/material/IconButton';
-import Stack from '@mui/material/Stack';
-import DeleteIcon from '@mui/icons-material/Delete';
-import AlarmIcon from '@mui/icons-material/Alarm';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import * as React from "react";
+import CssBaseline from "@mui/material/CssBaseline";
+import Container from "@mui/material/Container";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
+import FormatAlignCenterIcon from "@mui/icons-material/FormatAlignCenter";
+import FormatAlignRightIcon from "@mui/icons-material/FormatAlignRight";
+import FormatAlignJustifyIcon from "@mui/icons-material/FormatAlignJustify";
 
 export default function TodoList() {
   return (
-    <Stack direction="row" spacing={1}>
-      <IconButton aria-label="delete">
-        <DeleteIcon />
-      </IconButton>
-      <IconButton aria-label="delete" disabled color="primary">
-        <DeleteIcon />
-      </IconButton>
-      <IconButton color="secondary" aria-label="add an alarm">
-        <AlarmIcon />
-      </IconButton>
-      <IconButton color="primary" aria-label="add to shopping cart">
-        <AddShoppingCartIcon />
-      </IconButton>
-    </Stack>
+    <Container maxWidth="sm">
+      <Card sx={{ minWidth: 275 }}>
+        <CardContent>
+          <Typography variant="h2">مهامي</Typography>
+          <Divider />
+
+          {/* Filter Buttons */}
+          <ToggleButtonGroup
+            style={{ direction: "ltr", marginTop: "30px" }}
+            // value={alignment}
+            exclusive
+            // onChange={handleAlignment}
+            aria-label="text alignment"
+          >
+            <ToggleButton value="right">غير المنجزة</ToggleButton>
+            <ToggleButton value="center">المنجزة</ToggleButton>
+            <ToggleButton value="left">الكل</ToggleButton>
+          </ToggleButtonGroup>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+    </Container>
   );
 }

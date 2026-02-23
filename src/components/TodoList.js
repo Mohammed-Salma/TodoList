@@ -13,6 +13,7 @@ import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import FormatAlignCenterIcon from "@mui/icons-material/FormatAlignCenter";
 import FormatAlignRightIcon from "@mui/icons-material/FormatAlignRight";
 import FormatAlignJustifyIcon from "@mui/icons-material/FormatAlignJustify";
+import Todo from "./Todo";
 
 export default function TodoList() {
   return (
@@ -34,10 +35,10 @@ export default function TodoList() {
             <ToggleButton value="center">المنجزة</ToggleButton>
             <ToggleButton value="left">الكل</ToggleButton>
           </ToggleButtonGroup>
+
+          {/* All ToDos */}
+          <Todo />
         </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions>
       </Card>
     </Container>
   );

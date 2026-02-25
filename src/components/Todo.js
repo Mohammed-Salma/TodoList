@@ -12,7 +12,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
-export default function Todo() {
+export default function Todo({ title, details, isCompleted }) {
   return (
     <>
       <Card
@@ -28,10 +28,10 @@ export default function Todo() {
           <Grid container spacing={2}>
             <Grid size={8}>
               <Typography variant="h5" sx={{ textAlign: "right" }}>
-                المهمة الأولى
+                {title}
               </Typography>
               <Typography variant="h6" sx={{ textAlign: "right" }}>
-                التفاصيل الخاصة بالمهمة الأولى
+                {details}
               </Typography>
             </Grid>
 
